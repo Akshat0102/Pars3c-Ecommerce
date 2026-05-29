@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import "./navigation.styles.css";
+import "./navigation.styles.scss";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import { UserRound } from "lucide-react";
 
