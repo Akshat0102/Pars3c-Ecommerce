@@ -1,12 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&family=Playwrite+GB+S+Guides&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
   margin: 0;
+  padding: 0;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   padding: 20px 40px;
+
   font-family: 'Open Sans Condensed', sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background-color: #662b0d;
+  color: #f5ebe0;
 }
 
 code {
@@ -21,9 +46,10 @@ code {
 
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
-* {
-  box-sizing: border-box;
+img {
+  user-select: none;
+  -webkit-user-drag: none;
 }
