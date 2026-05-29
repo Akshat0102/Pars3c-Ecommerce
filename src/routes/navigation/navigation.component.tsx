@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
-
 import "./navigation.styles.css";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
+import { UserRound } from "lucide-react";
 
 const Navigation = () => {
   return (
@@ -9,18 +10,13 @@ const Navigation = () => {
         <Link className="logo-container" to="/">
           <h2>Pars3c</h2>
         </Link>
-
         <div className="nav-links">
-          <Link className="nav-link" to="/shop">
-            SHOP
-          </Link>
-
           <Link className="nav-link" to="/auth">
-            SIGN IN
+            <UserRound size={26} />
           </Link>
+          <CartIcon />
         </div>
       </div>
-
       <Outlet />
     </>
   );
