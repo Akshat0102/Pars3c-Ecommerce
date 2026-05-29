@@ -12,7 +12,7 @@ export type ShopCategory = {
 
 const SHOP_DATA: ShopCategory[] = [
   {
-    title: 'Chocolate',
+    title: 'Chocolates',
     items: [
       {
         id: 1,
