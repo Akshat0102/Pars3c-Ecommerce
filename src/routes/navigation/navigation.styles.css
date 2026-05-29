@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .logo-container h2 {
@@ -37,7 +37,7 @@
   padding: 10px 15px;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 800px) {
