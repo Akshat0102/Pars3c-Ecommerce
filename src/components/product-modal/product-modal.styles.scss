@@ -65,10 +65,10 @@
 
 .add-btn {
   border: none;
-  background: #5d4037;
+  background: #33201a;
   color: white;
   padding: 14px 30px;
-  border-radius: 12px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   transition: background 0.2s ease;
@@ -76,6 +76,30 @@
   &:hover {
     background: #3e2723;
   }
+}
+
+.quantity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.qty-wrapper span {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+.qty {
+  min-width: 20px;
+  text-align: center;
 }
 
 .close-btn {
