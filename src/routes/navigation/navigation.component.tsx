@@ -1,11 +1,14 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import "./navigation.styles.scss";
 
 const Navigation = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <>
-      <div className="navigation">
+      <div className={`navigation ${isHomePage ? "home-nav" : "default-nav"}`}>
         <Link className="logo-container" to="/">
           <h2>Pars3c</h2>
         </Link>
