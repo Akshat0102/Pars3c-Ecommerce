@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Pars3c
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React + TypeScript ecommerce storefront built with Vite. Pars3c showcases a premium specialty shop experience with category navigation, product browsing, product detail modal, cart management, and responsive UI styling powered by Sass.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Home landing page with hero messaging and shop CTA
+- Category directory for `Chocolates`, `Coffee`, `Honey`, `Cookies`, and `Bread`
+- Product browsing with modal details and add-to-cart support
+- Sort products by name and price
+- Persistent cart state managed with Redux Toolkit
+- Cart page with quantity controls, remove item, clear cart, and total pricing
+- Client-side routing via React Router
+- Iconography using `lucide-react`
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `React 19`
+- `TypeScript`
+- `Vite`
+- `React Router DOM`
+- `Redux Toolkit`
+- `React Redux`
+- `Sass`
+- `lucide-react`
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `src/App.tsx` — application routes and lazy loading
+- `src/main.tsx` — app entry point with router and Redux provider
+- `src/routes/` — page-level components for home, shop, cart, category, and navigation
+- `src/components/` — UI components for directory, product cards, product modal, and cart icon
+- `src/store/` — Redux store, typed hooks, cart slice, and selectors
+- `src/shop-data.ts` — product catalog and category definitions
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Install dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open `http://localhost:5173` in your browser.
+
+## How it works
+
+1. The app uses `React Router` for navigation between Home, Shop, and Cart pages.
+2. The shop landing page displays category cards that link to category routes like `/shop/chocolates`.
+3. Each category page renders product cards from `src/shop-data.ts`.
+4. Clicking a product opens a modal with details and cart controls.
+5. Cart state is managed globally with `Redux Toolkit` and exposed through `useAppSelector`.
+6. The navigation bar includes a cart icon with a live item count and a route to `/cart`.
+
+## Notes
+
+- The product catalog is currently seeded from `src/shop-data.ts`.
+- The app uses client-side state only; there is no backend or checkout integration.
+- Styling is handled with Sass and scoped component styles.
+- This repository is public.
+
+## License
+
+This project is licensed under the Apache License 2.0. See the `LICENSE` file for details.
