@@ -13,10 +13,10 @@ const App = () => {
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
       <Routes>
-        <Route path="/" element={<Navigation />}>
+        <Route element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop/*" element={<Shop />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="cart" element={<Cart />} />
         </Route>
       </Routes>
     </Suspense>
