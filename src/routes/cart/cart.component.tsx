@@ -31,7 +31,7 @@ const Cart = () => {
                 <div className="item-content">
                   <div className="item-left">
                     <h3>{item.name}</h3>
-                    <button className="quantity-btn">
+                    <button className="qty-btn">
                       <div className="qty-wrapper">
                         <span
                           onClick={() => dispatch(decreaseQuantity(item.id))}
