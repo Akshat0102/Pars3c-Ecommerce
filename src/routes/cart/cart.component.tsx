@@ -4,6 +4,7 @@ import {
   increaseQuantity,
   decreaseQuantity,
   removeItem,
+  clearCart,
 } from "../../store/cart/cart.slice";
 import "./cart.styles.scss";
 import { Link } from "react-router-dom";
@@ -34,7 +35,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <div className="title">Your Cart</div>
+          <div className="ct-title">Your Cart</div>
           <div className="cart-items">
             {cartItems.map((item) => (
               <div key={item.id} className="cart-item">
@@ -73,8 +74,19 @@ const Cart = () => {
               </div>
             ))}
           </div>
-          <div className="cart-total">
-            <h2>Total: ${totalPrice}</h2>
+          <div className="cart-footer">
+            <button
+              className="action-btn secondary"
+              onClick={() => dispatch(clearCart())}
+            >
+              Clear Cart
+            </button>
+            <div className="checkout-section">
+              <span className="total">Cart Total: ${totalPrice}</span>
+              <button className="action-btn primary">
+                Proceed To Checkout
+              </button>
+            </div>
           </div>
         </>
       )}
