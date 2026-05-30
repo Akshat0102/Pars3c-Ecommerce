@@ -19,10 +19,10 @@ const Navigation = () => {
           <Link className="nav-link" to="/shop">
             Shop
           </Link>
-          <Link className="nav-link" to="/our-story">
+          <Link className="nav-link" to="">
             Our Story
           </Link>
-          <Link className="nav-link" to="/contact">
+          <Link className="nav-link" to="">
             Contact
           </Link>
         </div>
