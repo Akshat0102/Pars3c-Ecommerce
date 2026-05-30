@@ -58,6 +58,24 @@ Open `http://localhost:5173` in your browser.
 5. Cart state is managed globally with `Redux Toolkit` and exposed through `useAppSelector`.
 6. The navigation bar includes a cart icon with a live item count and a route to `/cart`.
 
+## What I decided and why
+
+- Chose `Vite` with `React` and `TypeScript` for a fast developer experience, modern build output, and strong type safety.
+- Used `Redux Toolkit` for cart state because the cart is shared across the navigation, product modal, and cart page.
+- Used `React Router` nested routes so category navigation can remain within the shop section while still sharing a top-level layout.
+- Kept product data in `src/shop-data.ts` to make the prototype frontend-only and easy to iterate without a backend.
+- Used Sass to keep component styles organized and maintainable while still allowing scoped styling.
+- Added a modal-based product detail view to keep browsing smooth and avoid forcing a full page transition.
+- Left checkout and authentication out of the MVP to focus on core browsing, cart, and category user flows.
+
+## Potential Next Steps
+
+- Add Stripe checkout integration for a complete ecommerce purchase flow.
+- Add user authentication so customers can create accounts and securely sign in.
+- Add a user-specific order history page to display past purchases.
+- Add a contact page with business information and a contact form.
+- Expand the product catalog with more items and more detailed, authentic product descriptions.
+
 ## Notes
 
 - The product catalog is currently seeded from `src/shop-data.ts`.
