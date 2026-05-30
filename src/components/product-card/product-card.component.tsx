@@ -7,13 +7,14 @@ type ProductCardProps = {
 };
 
 const ProductCard = ({ product, onClick }: ProductCardProps) => {
-  const { name, imageUrl } = product;
+  const { name, price, imageUrl } = product;
 
   return (
     <div className="product-card" onClick={() => onClick(product)}>
       <img src={imageUrl || "/placeholder.png"} alt={name} />
       <div className="footer">
         <span>{name}</span>
+        <span style={{color: "white"}}>${price}</span>
       </div>
     </div>
   );
