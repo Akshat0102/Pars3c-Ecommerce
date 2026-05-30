@@ -6,7 +6,8 @@ import {
   removeItem,
 } from "../../store/cart/cart.slice";
 import "./cart.styles.scss";
-import { Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Trash2, PackageOpen } from "lucide-react";
 
 const Cart = () => {
   const cartItems = useAppSelector(selectCartItems);
@@ -18,12 +19,22 @@ const Cart = () => {
 
   return (
     <div className="cart-page">
-      <div className="title">Your Cart</div>
-
       {cartItems.length === 0 ? (
-        <p>Your cart is empty</p>
+        <div className="empty-cart">
+          <PackageOpen size={120} strokeWidth={1.2} />
+          <h2>Your Cart Is Empty</h2>
+          <p>
+            Looks like you haven't added any delicious treats yet. Explore our
+            collection and find your next favorite.
+          </p>
+
+          <Link to="/shop" className="continue-shopping-btn">
+            Continue Shopping
+          </Link>
+        </div>
       ) : (
         <>
+          <div className="title">Your Cart</div>
           <div className="cart-items">
             {cartItems.map((item) => (
               <div key={item.id} className="cart-item">
