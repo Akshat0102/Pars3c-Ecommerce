@@ -7,6 +7,7 @@ const Navigation = lazy(
 
 const Home = lazy(() => import("./routes/home/home.component"));
 const Shop = lazy(() => import("./routes/shop/shop.component"));
+const Cart = lazy(() => import("./routes/cart/cart.component"));
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
           <Route path="shop/*" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </Suspense>
