@@ -1,41 +1,49 @@
 .navigation {
   height: 70px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
   align-items: center;
   margin-bottom: 25px;
 
   .logo-container {
-    height: 100%;
-    min-width: 180px;
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
 
     h2 {
       margin: 0;
-      font-family: 'Alex Brush', cursive;
+      font-family: "Alex Brush", cursive;
       font-size: 40px;
       font-weight: 700;
       letter-spacing: 2px;
     }
   }
 
-  .nav-links {
-    width: 50%;
-    height: 100%;
+  .nav-menu {
     display: flex;
-    font-size: 20px;
-    align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    gap: 60px;
 
     .nav-link {
-      padding: 10px 15px;
-      cursor: pointer;
+      color: white;
       text-decoration: none;
-      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 14px;
+      font-weight: 300;
+      transition: color 0.25s ease;
+
+      &:hover {
+        color: #d4a373;
+      }
     }
+  }
+
+  .nav-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }

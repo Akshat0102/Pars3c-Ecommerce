@@ -3,8 +3,11 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-right: 10px;
   transition: transform 0.2s ease;
+
   &:hover {
+    color: #d4a373;
     transform: scale(1.1);
   }
 }
